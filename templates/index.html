@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>🎵 Music AI</h2>
+
+    <hr>
+
+    <!-- Search -->
+    <div class="sidebar-section">
+
+        <h3>🔍 Search</h3>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search Song..."
+            onkeyup="searchSong()">
+
+    </div>
+
+    <!-- Mood -->
+    <div class="sidebar-section">
+
+        <h3>🎭 Mood</h3>
+
+        <form method="POST">
+
+            <select name="mood">
+
+                <option value="">Select Mood</option>
+
+                {% for mood in moods %}
+                <option value="{{ mood }}">
+                    {{ mood }}
+                </option>
+                {% endfor %}
+
+            </select>
+
+            <button type="submit" class="recommend-btn">
+                🎵 Recommend
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Favorites -->
+    <div class="sidebar-section">
+
+        <a href="/favorites" class="side-btn">
+            ❤️ Favorites
+        </a>
+
+    </div>
+
+    <!-- Voice Search -->
+    <div class="sidebar-section">
+
+        <button onclick="startVoice()" class="voice-btn">
+            🎤 Voice Search
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="main">
+
+<div class="container">
+
+
+<h1>🎵 Music Recommendation System</h1>
+
+<form method="POST">
+
+
+<!-- Song Select -->
+
+<select name="song">
+
+<option value="">
+Select a Song
+</option>
+
+
+{% for song in songs %}
+
+<option value="{{ song }}">
+{{ song }}
+</option>
+
+{% endfor %}
+
+
+</select>
+
+<button type="submit" id="recommend-btn">
+🎵 Get AI Recommendations
+</button>
+
+</form>
+
+
+
+
+
+{% if recommendations %}
+
+
+<h2>Recommended Songs 🎧</h2>
+
+<div class="cards">
+
+{% for item in recommendations %}
+
+<div class="card">
+
+    <img src="{{ item.image }}" class="cover">
+
+    <div class="song-info">
+
+        <h2>{{ item.song }}</h2>
+
+        <p>🎤 {{ item.artist }}</p>
+
+        <p>🎼 {{ item.genre }}</p>
+
+        <p>🎭 {{ item.mood }}</p>
+
+        <p class="match">✨ AI Match : 100%</p>
+
+    </div>
+
+    <div class="action">
+
+        <form action="/add_favorite" method="POST">
+
+            <input type="hidden" name="song" value="{{ item.song }}">
+
+            <button class="fav-btn">
+
+                ❤️ Add Favorite
+
+            </button>
+
+        </form>
+
+        <a href="{{ item.link }}" target="_blank">
+
+            <button class="play-btn">
+
+                ▶ Play on YouTube
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+
+
+</div>
+
+
+{% endif %}
+
+
+
+</div>
+
+</div>
+
+
+
+
+<script>
+
+
+function searchSong(){
+
+
+let input = document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+
+let select = document.querySelector('select[name="song"]');
+
+
+let options = select.options;
+
+
+
+for(let i=0;i<options.length;i++){
+
+
+let text = options[i]
+.text
+.toLowerCase();
+
+
+
+if(i==0 || text.includes(input)){
+
+
+options[i].style.display="";
+
+
+}
+
+else{
+
+
+options[i].style.display="none";
+
+
+}
+
+
+}
+
+
+}
+
+function startVoice(){
+
+    let recognition = new webkitSpeechRecognition();
+
+    recognition.lang = "en-IN";
+
+    recognition.start();
+
+
+    recognition.onresult = function(event){
+
+        let command = event.results[0][0].transcript.toLowerCase();
+
+        console.log(command);
+
+
+        if(command.includes("kesariya")){
+
+            window.open(
+            "https://www.youtube.com/results?search_query=Kesariya+Official",
+            "_blank"
+            );
+
+        }
+
+
+        else if(command.includes("perfect")){
+
+            window.open(
+            "https://www.youtube.com/results?search_query=Perfect+Ed+Sheeran+Official",
+            "_blank"
+            );
+
+        }
+
+
+        else{
+
+            let song = command.replace("play","");
+
+            window.open(
+            "https://www.youtube.com/results?search_query="+song,
+            "_blank"
+            );
+
+        }
+
+
+    };
+
+}
+
+
+</script>
+
+
+</body>
+</html>

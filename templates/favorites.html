@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Favorites ❤️</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>❤️ My Favorite Songs</h1>
+
+
+{% if favorites %}
+
+
+<div class="cards">
+
+
+{% for song in favorites %}
+
+
+<div class="card">
+
+<h3>{{ song }}</h3>
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+
+{% else %}
+
+<h2>No Favorite Songs Added 😢</h2>
+
+{% endif %}
+
+
+</div>
+
+
+</body>
+
+</html>

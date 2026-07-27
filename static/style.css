@@ -1,0 +1,899 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   COLOR PALETTE
+=========================== */
+
+:root{
+
+    --first:#CBF078;
+    --second:#F8F398;
+    --third:#F1B963;
+    --fourth:#E46161;
+
+    --bg:#151827;
+    --sidebar:#1E2235;
+    --card:#2A3045;
+
+    --white:#ffffff;
+    --gray:#d7d7d7;
+
+}
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+
+    background:linear-gradient(
+        135deg,
+        var(--bg),
+        #22283D
+    );
+
+    color:var(--white);
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+
+    width:260px;
+
+    height:100vh;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    background:var(--sidebar);
+
+    padding:25px;
+
+    overflow-y:auto;
+
+    border-right:3px solid var(--first);
+
+    box-shadow:5px 0 20px rgba(0,0,0,.35);
+
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.sidebar h2{
+
+    text-align:center;
+
+    color:var(--first);
+
+    margin-bottom:35px;
+
+    font-size:28px;
+
+    letter-spacing:1px;
+
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+.sidebar-section{
+
+    margin-bottom:30px;
+
+}
+
+.sidebar-section h3{
+
+    color:var(--second);
+
+    margin-bottom:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.sidebar input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#31374E;
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.sidebar input:focus{
+
+    border:2px solid var(--first);
+
+}
+
+/* ===========================
+   SELECT
+=========================== */
+
+.sidebar select{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#31374E;
+
+    color:white;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+}
+
+/* ===========================
+   MAIN
+=========================== */
+
+.main{
+
+    margin-left:260px;
+
+    width:100%;
+
+    padding:35px;
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    max-width:980px;
+
+    margin:auto;
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:22px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.container h1{
+
+    text-align:center;
+
+    color:var(--first);
+
+    font-size:34px;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.recommend-btn,
+.voice-btn,
+.side-btn,
+.play-btn,
+.fav-btn{
+
+    width:100%;
+
+    padding:18px 25px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    margin-top:10px;
+
+}
+
+/* Recommend */
+
+.recommend-btn{
+
+    width:100%;
+
+    padding:18px 25px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #CBF078,
+        #F1B963,
+        #E46161
+    );
+
+    color:#111827;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.35s;
+
+    box-shadow:0 10px 25px rgba(228,97,97,.35);
+
+    letter-spacing:1px;
+
+}
+
+.recommend-btn:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:0 15px 35px rgba(228,97,97,.55);
+
+}
+
+.recommend-btn:active{
+
+    transform:scale(.97);
+
+}
+/* Voice */
+
+.voice-btn{
+
+    background:#7C4DFF;
+
+    color:white;
+
+}
+
+.voice-btn:hover{
+
+    background:#673AB7;
+
+    transform:scale(1.05);
+
+}
+
+/* Favorites */
+
+.side-btn{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:var(--fourth);
+
+    color:white;
+
+}
+
+.side-btn:hover{
+
+    background:#cf4747;
+
+}
+
+/* Play */
+
+.play-btn{
+
+    background:var(--first);
+
+    color:#222;
+
+}
+
+.play-btn:hover{
+
+    background:var(--second);
+
+}
+
+/* Favorite */
+
+.fav-btn{
+
+    background:var(--fourth);
+
+    color:white;
+
+}
+
+.fav-btn:hover{
+
+    background:#cf4747;
+
+}
+
+
+/* ===========================
+   SONG DROPDOWN
+=========================== */
+
+.main select{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:#39415C;
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+
+/* ===========================
+   SONG CARDS
+=========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+.card{
+
+    background:#31374E;
+
+    border-radius:22px;
+
+    padding:22px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    border:2px solid transparent;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--first);
+
+    box-shadow:0 0 25px rgba(203,240,120,.35);
+
+}
+
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.cover{
+
+    width:170px;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    margin-bottom:18px;
+
+    transition:.4s;
+
+}
+
+.card:hover .cover{
+
+    transform:scale(1.06);
+
+}
+
+
+/* ===========================
+   TEXT
+=========================== */
+
+.card h3{
+
+    color:var(--first);
+
+    margin-bottom:8px;
+
+}
+
+.card p{
+
+    color:var(--gray);
+
+    margin:6px 0;
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.container{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.card{
+
+    animation:fadeUp .7s ease;
+
+}
+
+
+/* ===========================
+   CUSTOM SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#1E2235;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--third);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--fourth);
+
+}
+
+
+/* ===========================
+   IMAGE EFFECT
+=========================== */
+
+.cover{
+
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.card:hover .cover{
+
+    transform:scale(1.08) rotate(2deg);
+
+}
+
+
+/* ===========================
+   TITLE EFFECT
+=========================== */
+
+.container h1{
+
+    text-shadow:0 0 12px rgba(203,240,120,.4);
+
+}
+
+
+/* ===========================
+   BUTTON CLICK EFFECT
+=========================== */
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+
+/* ===========================
+   GLASS EFFECT
+=========================== */
+
+.container{
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+/* ===========================
+   INPUT PLACEHOLDER
+=========================== */
+
+::placeholder{
+
+    color:#d4d4d4;
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.sidebar{
+
+    width:100%;
+
+    height:auto;
+
+    position:relative;
+
+    border-right:none;
+
+}
+
+.main{
+
+    margin-left:0;
+
+    padding:20px;
+
+}
+
+.container{
+
+    padding:20px;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.cover{
+
+    width:150px;
+
+    height:150px;
+
+}
+
+.container h1{
+
+    font-size:26px;
+
+}
+
+.sidebar h2{
+
+    font-size:24px;
+
+}
+
+}
+
+
+/* ===========================
+   FOOTER (Optional)
+=========================== */
+
+.footer{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    color:var(--second);
+
+    font-size:14px;
+
+}
+
+/* ===== Spotify Style Recommendation Card ===== */
+
+.cards{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:#1E293B;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    width:100%;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 25px rgba(241,185,99,.35);
+
+}
+
+.cover{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+}
+
+.song-info{
+
+    flex:1;
+
+    margin-left:30px;
+
+}
+
+.song-info h2{
+
+    font-size:30px;
+
+    color:#CBF078;
+
+    margin-bottom:12px;
+
+}
+
+.song-info p{
+
+    font-size:18px;
+
+    color:#F8F398;
+
+    margin:10px 0;
+
+}
+
+.action{
+
+    width:240px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.action button{
+
+    width:100%;
+
+    padding:16px;
+
+    font-size:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+}
+
+.fav-btn{
+
+    background:#E46161;
+
+    color:white;
+
+}
+
+.play-btn{
+
+    background:#F1B963;
+
+    color:#111;
+
+}
+
+.match{
+
+    color:#CBF078;
+
+    font-weight:bold;
+
+    margin-top:15px;
+
+}
+
+@media(max-width:900px){
+
+.card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.song-info{
+
+margin:20px 0;
+
+}
+
+.action{
+
+width:100%;
+
+}
+
+.cover{
+
+width:170px;
+
+height:170px;
+
+}
+
+}
+
+#recommend-btn{
+    display:block;
+    width:100%;
+    height:80px;
+
+    background:linear-gradient(135deg,#CBF078,#F1B963,#E46161);
+
+    color:#111827;
+
+    border:none;
+
+    border-radius:20px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin:20px 0;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+    transition:.3s;
+}
+
+#recommend-btn:hover{
+    transform:scale(1.03);
+}
