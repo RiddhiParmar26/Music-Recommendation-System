@@ -897,3 +897,162 @@ height:170px;
 #recommend-btn:hover{
     transform:scale(1.03);
 }
+
+
+
+/* ===========================
+   EXTRA MOBILE RESPONSIVE
+=========================== */
+
+@media(max-width:600px){
+
+    body{
+        flex-direction:column;
+        overflow-x:hidden;
+    }
+
+
+    .sidebar{
+
+        width:100%;
+        height:auto;
+        position:relative;
+
+        padding:20px;
+
+        border-right:none;
+        border-bottom:3px solid var(--first);
+
+    }
+
+
+    .sidebar h2{
+
+        font-size:22px;
+        margin-bottom:20px;
+
+    }
+
+
+    .main{
+
+        width:100%;
+        margin-left:0;
+
+        padding:15px;
+
+    }
+
+
+    .container{
+
+        width:100%;
+        padding:15px;
+
+        border-radius:15px;
+
+    }
+
+
+    .container h1{
+
+        font-size:22px;
+
+        line-height:1.3;
+
+    }
+
+
+    .main select{
+
+        font-size:14px;
+        padding:12px;
+
+    }
+
+
+    #recommend-btn{
+
+        height:60px;
+
+        font-size:18px;
+
+    }
+
+
+    .cards{
+
+        gap:15px;
+
+    }
+
+
+    .card{
+
+        padding:15px;
+
+        width:100%;
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+    .cover{
+
+        width:140px;
+        height:140px;
+
+    }
+
+
+    .song-info{
+
+        margin:15px 0;
+
+    }
+
+
+    .song-info h2{
+
+        font-size:22px;
+
+    }
+
+
+    .song-info p{
+
+        font-size:15px;
+
+    }
+
+
+    .action{
+
+        width:100%;
+
+    }
+
+
+    .action button{
+
+        font-size:15px;
+
+        padding:13px;
+
+    }
+
+
+    .recommend-btn,
+    .voice-btn,
+    .side-btn{
+
+        font-size:16px;
+
+        padding:14px;
+
+    }
+
+}
